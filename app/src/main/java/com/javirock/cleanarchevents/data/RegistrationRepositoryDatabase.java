@@ -1,13 +1,13 @@
 package com.javirock.cleanarchevents.data;
 
 
-import com.javirock.cleanarchevents.entities.RegistrationData;
-import com.javirock.cleanarchevents.entities.RegistrationRepository;
+import com.javirock.cleanarchevents.businesslayer.models.RegistrationModel;
+import com.javirock.cleanarchevents.businesslayer.repositories.RegistrationRepository;
 
 public class RegistrationRepositoryDatabase implements RegistrationRepository {
     // TODO: implement specific local registration
     @Override
-    public void registerUser(RegistrationData data) {
+    public void registerUser(RegistrationModel data) {
 
     }
 
