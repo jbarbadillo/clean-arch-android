@@ -2,5 +2,8 @@ package com.javirock.cleanarchevents.entities;
 
 
 
-public class RegistrationRepository {
+public interface RegistrationRepository {
+    void registerUser(RegistrationData data);
+    void cancelUser();
+    void updateUser();
 }
