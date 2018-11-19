@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.javirock.cleanarchevents.R;
 import com.javirock.cleanarchevents.ui.presenters.RegistrationPresenter;
 
 
@@ -20,12 +21,17 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_registration);
         presenter = new RegistrationPresenter(this);
 
     }
     private void createComponents(){
+        registerButton = (Button) findViewById(R.id.btn_register);
         registerButton.setOnClickListener(onClickListener());
+
+        userNameEditText = (EditText) findViewById(R.id.input_username);
+        passwordEditText = (EditText) findViewById(R.id.input_password);
+        emailEditText = (EditText) findViewById(R.id.input_email);
     }
     private View.OnClickListener onClickListener() {
         return new View.OnClickListener()
