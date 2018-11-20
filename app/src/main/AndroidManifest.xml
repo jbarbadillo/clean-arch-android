@@ -20,6 +20,8 @@
         <activity
             android:name=".presentationlayer.ui.activities.RegistrationActivity"
             android:theme="@style/AppTheme.Dark" />
+        <activity android:name=".presentationlayer.ui.activities.UserActivity"
+            android:theme="@style/AppTheme.Dark"></activity>
     </application>
 
 </manifest>

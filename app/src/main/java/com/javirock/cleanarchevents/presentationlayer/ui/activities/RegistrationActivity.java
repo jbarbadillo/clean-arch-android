@@ -1,5 +1,6 @@
 package com.javirock.cleanarchevents.presentationlayer.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -75,6 +76,8 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
 
     @Override
     public void nextScreen() {
+        Intent activity = new Intent(this, UserActivity.class);
+        startActivity(activity);
 
     }
 }
