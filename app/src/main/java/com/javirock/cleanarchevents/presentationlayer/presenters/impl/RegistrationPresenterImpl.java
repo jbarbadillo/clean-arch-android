@@ -1,10 +1,14 @@
 package com.javirock.cleanarchevents.presentationlayer.presenters.impl;
 
 
+import android.util.Log;
+
 import com.javirock.cleanarchevents.businesslayer.interactors.RegistrationInteractor;
 import com.javirock.cleanarchevents.businesslayer.models.RegistrationModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.RegistrationRepository;
 import com.javirock.cleanarchevents.presentationlayer.presenters.RegistrationPresenter;
+
+import java.util.logging.Logger;
 
 public class RegistrationPresenterImpl implements RegistrationPresenter, RegistrationInteractor.CallBack{
 
@@ -23,6 +27,7 @@ public class RegistrationPresenterImpl implements RegistrationPresenter, Registr
     @Override
     public void onRegisterClicked(String userName, String password, String email) {
         view.showProgress();
+        Log.i("clean", "on registration clicked");
         if(isValidFormat(userName,password, email)){
             RegistrationModel data = new RegistrationModel(userName,password, email);
             registrationInteractor.requestRegistration(data);
@@ -34,6 +39,7 @@ public class RegistrationPresenterImpl implements RegistrationPresenter, Registr
     @Override
     public void onRegistration(String user_id) {
         view.hideProgress();
+        Log.i("clean", "on registration");
         view.nextScreen();
     }
 

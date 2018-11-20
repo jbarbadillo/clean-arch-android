@@ -2,6 +2,7 @@ package com.javirock.cleanarchevents.data;
 
 
 import android.content.Context;
+import android.util.Log;
 
 import com.javirock.cleanarchevents.businesslayer.models.RegistrationModel;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
@@ -26,6 +27,7 @@ public class RegistrationRepositoryDatabase implements RegistrationRepository {
 
 
     private void createUser(UserModel user){
+        Log.i("clean", "creating user");
         UserDatabase database = UserDatabase.getUserDatabaseInstance(context);
         database.userDAO().insertUser(user);
     }
