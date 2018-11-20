@@ -30,6 +30,6 @@ dependencies {
     annotationProcessor 'android.arch.persistence.room:compiler:1.0.0-alpha4'
 
     // butterknife
-    implementation 'com.jakewharton:butterknife:9.0.0-rc2'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc2'
+    implementation 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 }

@@ -7,10 +7,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.javirock.cleanarchevents.R;
 import com.javirock.cleanarchevents.data.RegistrationRepositoryDatabase;
 import com.javirock.cleanarchevents.presentationlayer.presenters.RegistrationPresenter;
 import com.javirock.cleanarchevents.presentationlayer.presenters.impl.RegistrationPresenterImpl;
-import com.javirock.cleanarchevents.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,16 +20,16 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
     private RegistrationPresenter registrationPresenter;
 
     @BindView(R.id.input_username)
-    private EditText userNameEditText;
+    EditText userNameEditText;
 
     @BindView(R.id.input_password)
-    private EditText passwordEditText;
+    EditText passwordEditText;
 
     @BindView(R.id.input_email)
-    private EditText emailEditText;
+    EditText emailEditText;
 
     @BindView(R.id.btn_register)
-    private Button registerButton;
+    Button registerButton;
 
 
     @Override
