@@ -1,16 +1,15 @@
-package com.javirock.cleanarchevents.ui.presenters;
+package com.javirock.cleanarchevents.presentationlayer.presenters;
 
 
 import com.javirock.cleanarchevents.businesslayer.models.RegistrationModel;
-import com.javirock.cleanarchevents.businesslayer.repositories.RegistrationRepository;
-import com.javirock.cleanarchevents.ui.views.RegistrationView;
+import com.javirock.cleanarchevents.presentationlayer.views.RegistrationView;
 import com.javirock.cleanarchevents.businesslayer.interactors.RegistrationInteractor;
 
-public class RegistrationPresenter {
+public class OldRegistrationPresenter {
     private RegistrationView registrationView;
     private RegistrationInteractor registrationModel;
 
-    public RegistrationPresenter(RegistrationView registrationView){
+    public OldRegistrationPresenter(RegistrationView registrationView){
         this.registrationView = registrationView;
         this.registrationModel = new RegistrationInteractor();
     }

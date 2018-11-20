@@ -1,4 +1,4 @@
-package com.javirock.cleanarchevents.ui.views;
+package com.javirock.cleanarchevents.presentationlayer.ui.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +7,12 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.javirock.cleanarchevents.R;
-import com.javirock.cleanarchevents.ui.presenters.RegistrationPresenter;
+import com.javirock.cleanarchevents.presentationlayer.presenters.OldRegistrationPresenter;
+import com.javirock.cleanarchevents.presentationlayer.views.RegistrationView;
 
 
 public class RegistrationActivity extends AppCompatActivity implements RegistrationView {
-    private RegistrationPresenter presenter;
+    private OldRegistrationPresenter presenter;
     private EditText userNameEditText;
     private EditText passwordEditText;
     private EditText emailEditText;
@@ -22,7 +23,7 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        presenter = new RegistrationPresenter(this);
+        presenter = new OldRegistrationPresenter(this);
 
     }
     private void createComponents(){

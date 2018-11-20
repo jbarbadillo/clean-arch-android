@@ -1,4 +1,4 @@
-package com.javirock.cleanarchevents.ui.views;
+package com.javirock.cleanarchevents.presentationlayer.views;
 
 
 public interface RegistrationView {

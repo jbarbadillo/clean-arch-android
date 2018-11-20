@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.views.RegistrationActivity" android:theme="@style/AppTheme.Dark"></activity>
+        <activity android:name=".presentationlayer.ui.activities.RegistrationActivity" android:theme="@style/AppTheme.Dark"></activity>
     </application>
 
 </manifest>
