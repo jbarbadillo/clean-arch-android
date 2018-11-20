@@ -39,6 +39,7 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
         setContentView(R.layout.activity_registration);
 
         ButterKnife.bind(this);
+        createComponents();
         registrationPresenter = new RegistrationPresenterImpl(
                 this,
                 new RegistrationRepositoryDatabase(this));
