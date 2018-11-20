@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.javirock.cleanarchevents.data.RegistrationRepositoryDatabase;
 import com.javirock.cleanarchevents.presentationlayer.presenters.RegistrationPresenter;
 import com.javirock.cleanarchevents.presentationlayer.presenters.impl.RegistrationPresenterImpl;
+import com.javirock.cleanarchevents.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,7 +40,7 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
         ButterKnife.bind(this);
         registrationPresenter = new RegistrationPresenterImpl(
                 this,
-                new RegistrationRepositoryDatabase());
+                new RegistrationRepositoryDatabase(this));
 
     }
     private void createComponents(){

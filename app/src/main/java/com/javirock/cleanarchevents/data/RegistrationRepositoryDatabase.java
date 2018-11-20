@@ -1,11 +1,17 @@
 package com.javirock.cleanarchevents.data;
 
 
+import android.content.Context;
+
 import com.javirock.cleanarchevents.businesslayer.models.RegistrationModel;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.RegistrationRepository;
 
 public class RegistrationRepositoryDatabase implements RegistrationRepository {
+    Context context;
+    public RegistrationRepositoryDatabase(Context context){
+        this.context = context;
+    }
     @Override
     public String registerUser(RegistrationModel data) {
         // TODO create a real user registration
