@@ -7,6 +7,7 @@ public interface RegistrationPresenter {
         void showProgress();
         void hideProgress();
         void showError(String error);
+        void nextScreen();
     }
 
 }
