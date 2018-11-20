@@ -3,7 +3,6 @@ package com.javirock.cleanarchevents.businesslayer.interactors;
 import com.javirock.cleanarchevents.businesslayer.models.RegistrationModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.RegistrationRepository;
 
-import javax.security.auth.callback.Callback;
 
 public class RegistrationInteractor implements RegistrationInterface {
     CallBack callBack;

@@ -24,15 +24,7 @@ public class RegistrationRepositoryDatabase implements RegistrationRepository {
         return "1";
     }
 
-    @Override
-    public void cancelUser(String user_id) {
 
-    }
-
-    @Override
-    public void updateUser(String user_id, RegistrationModel data) {
-
-    }
     private void createUser(UserModel user){
         UserDatabase database = UserDatabase.getUserDatabaseInstance(context);
         database.userDAO().insertUser(user);
