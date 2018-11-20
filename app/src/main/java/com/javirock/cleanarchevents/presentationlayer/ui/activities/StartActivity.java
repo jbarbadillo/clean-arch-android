@@ -1,10 +1,8 @@
-package com.javirock.cleanarchevents;
+package com.javirock.cleanarchevents.presentationlayer.ui.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import com.javirock.cleanarchevents.presentationlayer.ui.activities.RegistrationActivity;
 
 public class StartActivity extends AppCompatActivity {
 

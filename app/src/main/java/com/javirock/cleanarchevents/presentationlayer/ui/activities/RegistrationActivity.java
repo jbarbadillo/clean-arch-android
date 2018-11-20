@@ -5,17 +5,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.javirock.cleanarchevents.R;
-import com.javirock.cleanarchevents.presentationlayer.presenters.OldRegistrationPresenter;
-import com.javirock.cleanarchevents.presentationlayer.views.RegistrationView;
+import com.javirock.cleanarchevents.data.RegistrationRepositoryDatabase;
+import com.javirock.cleanarchevents.presentationlayer.presenters.RegistrationPresenter;
+import com.javirock.cleanarchevents.presentationlayer.presenters.impl.RegistrationPresenterImpl;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
-public class RegistrationActivity extends AppCompatActivity implements RegistrationView {
-    private OldRegistrationPresenter presenter;
+public class RegistrationActivity extends AppCompatActivity implements RegistrationPresenter.View {
+    private RegistrationPresenter registrationPresenter;
+
+    @BindView(R.id.input_username)
     private EditText userNameEditText;
+
+    @BindView(R.id.input_password)
     private EditText passwordEditText;
+
+    @BindView(R.id.input_email)
     private EditText emailEditText;
+
+    @BindView(R.id.btn_register)
     private Button registerButton;
 
 
@@ -23,16 +35,15 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        presenter = new OldRegistrationPresenter(this);
+
+        ButterKnife.bind(this);
+        registrationPresenter = new RegistrationPresenterImpl(
+                this,
+                new RegistrationRepositoryDatabase());
 
     }
     private void createComponents(){
-        registerButton = (Button) findViewById(R.id.btn_register);
         registerButton.setOnClickListener(onClickListener());
-
-        userNameEditText = (EditText) findViewById(R.id.input_username);
-        passwordEditText = (EditText) findViewById(R.id.input_password);
-        emailEditText = (EditText) findViewById(R.id.input_email);
     }
     private View.OnClickListener onClickListener() {
         return new View.OnClickListener()
@@ -41,7 +52,7 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
                 String userName = userNameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
                 String email = emailEditText.getText().toString();
-                presenter.onRegisterClicked(userName,password, email);
+                registrationPresenter.onRegisterClicked(userName,password, email);
             }
         };
     }
@@ -58,6 +69,11 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
 
     @Override
     public void showError(String error) {
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void nextScreen() {
 
     }
 }

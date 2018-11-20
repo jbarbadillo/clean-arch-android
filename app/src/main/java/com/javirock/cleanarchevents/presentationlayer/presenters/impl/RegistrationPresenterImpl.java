@@ -12,7 +12,7 @@ public class RegistrationPresenterImpl implements RegistrationPresenter, Registr
     RegistrationRepository registrationRepository;
     RegistrationInteractor registrationInteractor;
 
-    RegistrationPresenterImpl(View view, RegistrationRepository registrationRepository){
+    public RegistrationPresenterImpl(View view, RegistrationRepository registrationRepository){
         this.view = view;
         this.registrationRepository = registrationRepository;
         this.registrationInteractor = new RegistrationInteractor(this, registrationRepository);
