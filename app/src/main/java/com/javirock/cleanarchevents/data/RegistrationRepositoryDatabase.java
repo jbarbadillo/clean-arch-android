@@ -14,9 +14,14 @@ public class RegistrationRepositoryDatabase implements RegistrationRepository {
     }
     @Override
     public String registerUser(RegistrationModel data) {
-        // TODO create a real user registration
-        // TODO return response?
-        return "";
+        UserModel user = new UserModel();
+        user.setUserName(data.getUserName());
+        user.setPassword(data.getPassword());
+        user.setEmail(data.getEmail());
+        user.setUser_id(1);
+
+        createUser(user);
+        return "1";
     }
 
     @Override
@@ -28,16 +33,9 @@ public class RegistrationRepositoryDatabase implements RegistrationRepository {
     public void updateUser(String user_id, RegistrationModel data) {
 
     }
-
-    private static void populateUser(UserDatabase database){
-        UserModel userModel = new UserModel();
-        userModel.setEmail("email1");
-        userModel.setPassword("pass");
-        userModel.setUserName("monguer");
-        addUser(database, userModel);
+    private void createUser(UserModel user){
+        UserDatabase database = UserDatabase.getUserDatabaseInstance(context);
+        database.userDAO().insertUser(user);
     }
 
-    private static void addUser(UserDatabase database, UserModel userModel) {
-        database.userDAO().insertUser(userModel);
-    }
 }

@@ -14,4 +14,16 @@ public class RegistrationModel {
         this.password = password;
         this.email = email;
     }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }

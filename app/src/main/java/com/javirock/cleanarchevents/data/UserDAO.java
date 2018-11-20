@@ -8,12 +8,14 @@ import android.arch.persistence.room.Query;
 
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 
+import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
+
 @Dao
 public interface UserDAO {
-    @Query("SELECT * FROM user")
-    UserModel getUser();
+    @Query("SELECT * FROM user WHERE user_id LIKE :user_id LIMIT 1")
+    UserModel getUser(String user_id);
 
-    @Insert
+    @Insert(onConflict = REPLACE)
     void insertUser(UserModel user);
 
     @Delete
