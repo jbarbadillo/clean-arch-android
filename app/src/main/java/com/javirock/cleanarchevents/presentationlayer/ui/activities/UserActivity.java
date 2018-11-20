@@ -4,6 +4,7 @@ package com.javirock.cleanarchevents.presentationlayer.ui.activities;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.javirock.cleanarchevents.R;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
@@ -16,12 +17,12 @@ import butterknife.ButterKnife;
 
 public class UserActivity extends AppCompatActivity implements UserPresenter.View {
     private UserPresenter userPresenter;
-
     @BindView(R.id.usernameTextView)
-    EditText userName;
+    TextView userName;
 
     @BindView(R.id.emailTextView)
-    EditText email;
+    TextView email;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,8 @@ public class UserActivity extends AppCompatActivity implements UserPresenter.Vie
                 new UserRepositoryDatabase(this));
 
     }
+
+
     @Override
     public void onResume() {
         super.onResume();
