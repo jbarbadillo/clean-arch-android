@@ -26,6 +26,18 @@ public class NetworkModule {
 
     @Singleton
     @Provides
+    RxJavaCallAdapterFactory provideRxJavacallAdapterFactory(){
+        return RxJavaCallAdapterFactory.create(); 
+    }
+    @Singleton
+    @Provides
+    GsonConverterFactory providesGsonConverterFactory(){
+        return GsonConverterFactory.create();
+    }
+
+    @Singleton
+    @Provides
+    @Named("ok-2")
     OkHttpClient provideOkkHttpClient2(){
         return new OkHttpClient.Builder()
                 .connectTimeout(20, TimeUnit.SECONDS)
