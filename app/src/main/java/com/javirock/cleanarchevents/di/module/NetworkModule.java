@@ -2,6 +2,9 @@ package com.javirock.cleanarchevents.di.module;
 
 import android.content.Context;
 
+import java.util.concurrent.TimeUnit;
+
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -23,7 +26,15 @@ public class NetworkModule {
 
     @Singleton
     @Provides
-    Retrofit providesRetrofit(OkHttpClient client,
+    OkHttpClient provideOkkHttpClient2(){
+        return new OkHttpClient.Builder()
+                .connectTimeout(20, TimeUnit.SECONDS)
+                .readTimeout(20, TimeUnit.SECONDS)
+                .build();
+    }
+    @Singleton
+    @Provides
+    Retrofit providesRetrofit(@Named("ok-1") OkHttpClient client,
                               GsonConverterFactory gsonConverterFactory,
                               RxJavaCallAdapterFactory rxJavaCallAdapterFactory){
         return new Retrofit.Builder()
