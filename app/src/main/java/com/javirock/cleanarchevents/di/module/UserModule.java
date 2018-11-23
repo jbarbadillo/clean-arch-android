@@ -1,6 +1,7 @@
 package com.javirock.cleanarchevents.di.module;
 
 
+import com.javirock.cleanarchevents.data.api.UserApiService;
 import com.javirock.cleanarchevents.di.scope.PerActivity;
 
 import dagger.Module;
@@ -13,7 +14,6 @@ public class UserModule {
     public UserModule(){
 
     }
-
     @PerActivity
     @Provides
     UserApiService provideUserApiService(Retrofit retrofit){

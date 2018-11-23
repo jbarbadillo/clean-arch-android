@@ -4,6 +4,7 @@ package com.javirock.cleanarchevents.application;
 import android.app.Application;
 
 import com.javirock.cleanarchevents.di.component.ApplicationComponent;
+import com.javirock.cleanarchevents.di.module.NetworkModule;
 
 public class UserApplication extends Application {
     private ApplicationComponent applicationComponent;
@@ -16,6 +17,8 @@ public class UserApplication extends Application {
     }
 
     private void initializeApplicationComponent() {
-        applicationComponent = DaggerApplicationComponent().build
+        applicationComponent = DaggerApplicationComponent.builder()
+                .networkModule(new NetworkModule(this, ""))
+                .build();
     }
 }
