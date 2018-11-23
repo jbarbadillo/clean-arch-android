@@ -21,4 +21,13 @@ public class UserApplication extends Application {
                 .networkModule(new NetworkModule(this, ""))
                 .build();
     }
+
+    public ApplicationComponent getApplicationComponent(){
+        return this.applicationComponent;
+    }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+    }
 }
