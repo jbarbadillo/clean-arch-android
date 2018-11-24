@@ -7,6 +7,9 @@ import com.javirock.cleanarchevents.businesslayer.interactors.UserInteractor;
 import com.javirock.cleanarchevents.businesslayer.models.RegistrationModel;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
+import com.javirock.cleanarchevents.data.api.UserApiService;
+
+import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -14,12 +17,15 @@ import io.reactivex.disposables.Disposable;
 
 public class UserRepositoryDatabase implements UserRepository, Observer<UserModel> {
     UserRepositoryInteractor userRepositoryInteractor;
-    Context context;
     UserModel user;
-    public UserRepositoryDatabase(Context context){
-        this.context = context;
-    }
 
+    @Inject
+    protected UserApiService userApiService;
+
+    @Inject
+    public UserRepositoryDatabase(){
+
+    }
     @Override
     public void getUser(UserRepositoryInteractor userRepositoryInteractor, String user_id) {
         this.userRepositoryInteractor = userRepositoryInteractor;
@@ -28,6 +34,7 @@ public class UserRepositoryDatabase implements UserRepository, Observer<UserMode
         //UserDatabase database = UserDatabase.getUserDatabaseInstance(context);
         //UserModel user = database.userDAO().getUser(1);
     }
+
 
     @Override
     public void cancelUser(String user_id) {

@@ -12,9 +12,9 @@ public interface UserApiService {
 
     //With Rx Java
     @GET("/user")
-    Observable<UserModel> getUser();
+    Observable<UserModel> getUser(String user_id);
 
     @POST("/user")
-    Observable postUser(UserModel user);
+    Observable<String> postUser(UserModel user);
 
 }
