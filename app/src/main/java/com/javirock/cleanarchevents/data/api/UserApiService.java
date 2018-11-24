@@ -20,8 +20,8 @@ public interface UserApiService {
             @Query("page") int page
     );
     //With Rx Java
-    @GET("/user/{user_id}")
-    Observable<UserModel> getUser(@Path("user_id") String user_id);
+    @GET("/user/{id}")
+    Observable<UserModel> getUser(@Path("id") String user_id);
 
     @POST("/user")
     Observable<String> postUser(UserModel user);
