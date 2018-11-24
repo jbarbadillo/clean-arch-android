@@ -32,6 +32,7 @@ public abstract class BaseActivity extends AppCompatActivity{
     }
 
     protected ApplicationComponent getApplicationComponent(){
+        // The main aplication is UserApplication in this project
         return ((UserApplication) getApplication()).getApplicationComponent();
     }
     protected void resolveDaggerDependency(){
