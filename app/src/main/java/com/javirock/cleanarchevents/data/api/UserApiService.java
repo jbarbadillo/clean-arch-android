@@ -25,8 +25,5 @@ public interface UserApiService {
 
     @POST("/user")
     Observable<String> postUser(UserModel user);
-
-
-
-    }
+    
 }
