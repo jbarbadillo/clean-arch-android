@@ -31,6 +31,7 @@ public class UserRepositoryDatabase implements UserRepository, Observer<UserMode
     @Override
     public void getUser(UserRepositoryInteractor userRepositoryInteractor, String user_id) {
         this.userRepositoryInteractor = userRepositoryInteractor;
+
         Observable<UserModel> userModelObservable = userApiService.getUser(user_id);
         subscribe(userModelObservable, this);
         //UserDatabase database = UserDatabase.getUserDatabaseInstance(context);
