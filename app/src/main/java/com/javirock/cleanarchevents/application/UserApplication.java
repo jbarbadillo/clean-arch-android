@@ -4,6 +4,7 @@ package com.javirock.cleanarchevents.application;
 import android.app.Application;
 
 import com.javirock.cleanarchevents.di.component.ApplicationComponent;
+import com.javirock.cleanarchevents.di.component.DaggerApplicationComponent;
 import com.javirock.cleanarchevents.di.module.NetworkModule;
 
 public class UserApplication extends Application {
