@@ -15,6 +15,8 @@ import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
+import static io.reactivex.internal.operators.observable.ObservableBlockingSubscribe.subscribe;
+
 public class UserRepositoryDatabase implements UserRepository, Observer<UserModel> {
     UserRepositoryInteractor userRepositoryInteractor;
     UserModel user;

@@ -34,7 +34,7 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
 
         userPresenter = new UserPresenterImpl(
                 this,
-                new UserRepositoryDatabase(this));
+                userRepositoryDatabase);
 
     }
 
