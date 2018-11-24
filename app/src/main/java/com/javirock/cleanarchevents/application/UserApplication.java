@@ -18,7 +18,7 @@ public class UserApplication extends Application {
 
     private void initializeApplicationComponent() {
         applicationComponent = DaggerApplicationComponent.builder()
-                .networkModule(new NetworkModule(this, "http://192.168.43.111:8080/cleanapi"))
+                .networkModule(new NetworkModule(this, "https://api.github.com/users"))
                 .build();
     }
 

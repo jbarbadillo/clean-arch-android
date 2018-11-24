@@ -10,12 +10,14 @@ public class UserModel {
     @PrimaryKey
     private int user_id;
 
-    @ColumnInfo(name = "userName")
     private String userName;
-    @ColumnInfo(name = "password")
     private String password;
-    @ColumnInfo(name = "email")
     private String email;
+
+    // github api properties to map by retrofit
+    private String login;
+    private long id;
+    private String url;
 
     public String getUserName() {
         return userName;
@@ -47,5 +49,29 @@ public class UserModel {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
