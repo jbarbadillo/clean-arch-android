@@ -16,6 +16,8 @@ import butterknife.Unbinder;
 public abstract class BaseActivity extends AppCompatActivity{
     Unbinder unbinder;
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,4 +39,10 @@ public abstract class BaseActivity extends AppCompatActivity{
     }
     protected abstract int getContentView();
 
+    @Override
+    protected void onDestroy() {
+        unbinder.unbind();
+        super.onDestroy();
+
+    }
 }
