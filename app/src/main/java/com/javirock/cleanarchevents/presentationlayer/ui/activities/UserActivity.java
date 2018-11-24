@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 
 public class UserActivity extends BaseActivity implements UserPresenter.View {
     private UserPresenter userPresenter;
+    UserRepositoryDatabase userRepositoryDatabase;
 
     @BindView(R.id.usernameTextView)
     TextView userName;
@@ -30,9 +31,7 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
 
-        ButterKnife.bind(this);
         userPresenter = new UserPresenterImpl(
                 this,
                 new UserRepositoryDatabase(this));

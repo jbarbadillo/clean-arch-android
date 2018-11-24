@@ -7,7 +7,10 @@ import com.javirock.cleanarchevents.businesslayer.models.RegistrationModel;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
 
-public class UserRepositoryDatabase implements UserRepository {
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+
+public class UserRepositoryDatabase implements UserRepository, Observer<UserModel> {
     Context context;
     public UserRepositoryDatabase(Context context){
         this.context = context;
@@ -27,6 +30,27 @@ public class UserRepositoryDatabase implements UserRepository {
 
     @Override
     public void updateUser(String user_id, RegistrationModel data) {
+
+    }
+
+    //reactivex methods
+    @Override
+    public void onSubscribe(Disposable d) {
+
+    }
+
+    @Override
+    public void onNext(UserModel userModel) {
+
+    }
+
+    @Override
+    public void onError(Throwable e) {
+
+    }
+
+    @Override
+    public void onComplete() {
 
     }
 }
