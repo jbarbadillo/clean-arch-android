@@ -9,14 +9,17 @@ import android.widget.TextView;
 import com.javirock.cleanarchevents.R;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.data.UserRepositoryDatabase;
+import com.javirock.cleanarchevents.di.module.UserModule;
+import com.javirock.cleanarchevents.presentationlayer.base.BaseActivity;
 import com.javirock.cleanarchevents.presentationlayer.presenters.UserPresenter;
 import com.javirock.cleanarchevents.presentationlayer.presenters.impl.UserPresenterImpl;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class UserActivity extends AppCompatActivity implements UserPresenter.View {
+public class UserActivity extends BaseActivity implements UserPresenter.View {
     private UserPresenter userPresenter;
+
     @BindView(R.id.usernameTextView)
     TextView userName;
 
@@ -34,6 +37,20 @@ public class UserActivity extends AppCompatActivity implements UserPresenter.Vie
                 this,
                 new UserRepositoryDatabase(this));
 
+    }
+
+    @Override
+    protected void resolveDaggerDependency() {
+        super.resolveDaggerDependency();
+        DaggerListComponent.builder()
+                .applicationComponent(getApplicationComponent())
+                .userModule(new UserModule())
+                .build().inject(this);
+    }
+
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_user;
     }
 
 
