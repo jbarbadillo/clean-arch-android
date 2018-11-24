@@ -5,7 +5,7 @@ import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
 import com.javirock.cleanarchevents.data.UserRepositoryInteractor;
 
-public class UserInteractor implements UserInterface {
+public class UserInteractor implements UserInterface, UserRepositoryInteractor {
     CallBack callBack;
     UserRepository userRepository;
     UserRepositoryInteractor userRepositoryInteractor;
@@ -16,13 +16,23 @@ public class UserInteractor implements UserInterface {
         this.userRepositoryInteractor = userRepositoryInteractor;
     }
     public void getUser(String user_id){
-        UserModel user = userRepository.getUser(userRepositoryInteractor, user_id);
+        userRepository.getUser(userRepositoryInteractor, user_id);
+    }
+    @Override
+    public void onError(String error) {
 
+    }
+
+    @Override
+    public void onUserCreated(String user_id) {
+
+    }
+    @Override
+    public void onUserRetrieved(UserModel user) {
         if(user == null){
             callBack.onUserRetrievedFailed("Registration failed");
             return;
         }
         callBack.onUserRetrieved(user);
     }
-
 }
