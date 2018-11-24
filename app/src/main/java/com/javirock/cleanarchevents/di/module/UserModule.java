@@ -14,6 +14,7 @@ public class UserModule {
     public UserModule(){
 
     }
+
     @PerActivity
     @Provides
     UserApiService provideUserApiService(Retrofit retrofit){

@@ -28,7 +28,7 @@ public class NetworkModule {
 
     @Singleton
     @Provides
-    RxJavaCallAdapterFactory provideRxJavacallAdapterFactory(){
+    RxJavaCallAdapterFactory provideRxJavaCallAdapterFactory(){
         return RxJavaCallAdapterFactory.create();
     }
     @Singleton
