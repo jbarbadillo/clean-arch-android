@@ -11,7 +11,7 @@ import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 /*
 This module is for providing dependencies of network.
@@ -29,8 +29,8 @@ public class NetworkModule {
 
     @Singleton
     @Provides
-    RxJavaCallAdapterFactory provideRxJavaCallAdapterFactory(){
-        return RxJavaCallAdapterFactory.create();
+    RxJava2CallAdapterFactory provideRxJavaCallAdapterFactory(){
+        return RxJava2CallAdapterFactory.create();
     }
     @Singleton
     @Provides
@@ -53,7 +53,7 @@ public class NetworkModule {
     @Provides
     Retrofit provideRetrofit(@Named("ok-1") OkHttpClient client,
                               GsonConverterFactory gsonConverterFactory,
-                              RxJavaCallAdapterFactory rxJavaCallAdapterFactory){
+                              RxJava2CallAdapterFactory rxJavaCallAdapterFactory){
         return new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(gsonConverterFactory)
