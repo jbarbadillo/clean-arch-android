@@ -14,10 +14,8 @@ import retrofit2.http.Query;
 
 public interface UserApiService {
     @GET("/users")
-    Observable<UserModel> getUsers(
-            @Query("per_page") int per_page,
-            @Query("page") int page
-    );
+    Observable<UserModel> getUsers();
+
     //With Rx Java
     @GET("/user/{id}")
     Observable<UserModel> getUser(@Path("id") String user_id);

@@ -1,7 +1,8 @@
 package com.javirock.cleanarchevents.storage;
 
 
-import com.javirock.cleanarchevents.businesslayer.models.RegistrationModel;
+import android.util.Log;
+
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
 import com.javirock.cleanarchevents.storage.api.UserApiService;
@@ -13,9 +14,10 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
-import static io.reactivex.internal.operators.observable.ObservableBlockingSubscribe.subscribe;
 
 public class UserListingRepository implements UserRepository, Observer<UserModel> {
     UserRepositoryInteractor userRepositoryInteractor;
@@ -31,41 +33,45 @@ public class UserListingRepository implements UserRepository, Observer<UserModel
     @Override
     public void getUserListing(UserRepositoryInteractor userRepositoryInteractor) {
         this.userRepositoryInteractor = userRepositoryInteractor;
-
-        Observable<UserModel> userModelObservable = userApiService.getUsers(1, 1);
+        Log.i("clean", "getting users");
+        Observable<UserModel> userModelObservable = userApiService.getUsers();
         subscribe(userModelObservable, this);
-
     }
-
+    protected <T> void subscribe(Observable<T> observable, Observer<T> observer){
+        observable.subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
+    }
 
     @Override
     public void cancelUser(String user_id) {
 
     }
 
-    @Override
-    public void updateUser(String user_id, RegistrationModel data) {
 
-    }
 
     //reactivex methods
     @Override
     public void onSubscribe(Disposable d) {
-
+        Log.i("clean", "on subscribed");
     }
 
     @Override
     public void onNext(UserModel userModel) {
+        Log.i("clean", "add on user");
         userModelList.add(userModel);
     }
 
     @Override
     public void onError(Throwable e) {
+        Log.i("clean", "error " + e.getStackTrace().toString());
+        Log.i("clean", "error " + e.getCause());
         userRepositoryInteractor.onError(e.getMessage());
     }
 
     @Override
     public void onComplete() {
+        Log.i("clean", "completed");
         userRepositoryInteractor.onUsersRetrieved(userModelList);
     }
 }

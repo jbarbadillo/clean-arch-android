@@ -2,8 +2,10 @@ package com.javirock.cleanarchevents.presentationlayer.ui.activities;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.javirock.cleanarchevents.R;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
@@ -64,7 +66,9 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
     @Override
     public void onResume() {
         super.onResume();
+        Log.i("clean", "onResume");
         userPresenter.onResume();
+
     }
     @Override
     public void showProgress() {
@@ -78,7 +82,7 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
 
     @Override
     public void showError(String error) {
-
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -88,6 +92,7 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
 
     @Override
     public void renderUsers(List<UserModel> userList) {
+        Log.i("clean", "render users");
         userAdapter.addItems(userList);
     }
 }
