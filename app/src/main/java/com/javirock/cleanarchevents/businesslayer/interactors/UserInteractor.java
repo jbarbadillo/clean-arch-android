@@ -3,7 +3,7 @@ package com.javirock.cleanarchevents.businesslayer.interactors;
 
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
-import com.javirock.cleanarchevents.data.UserRepositoryInteractor;
+import com.javirock.cleanarchevents.storage.UserRepositoryInteractor;
 
 public class UserInteractor implements UserInterface, UserRepositoryInteractor {
     CallBack callBack;

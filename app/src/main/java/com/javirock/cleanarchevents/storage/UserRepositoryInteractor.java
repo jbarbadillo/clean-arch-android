@@ -1,4 +1,4 @@
-package com.javirock.cleanarchevents.data;
+package com.javirock.cleanarchevents.storage;
 
 
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;

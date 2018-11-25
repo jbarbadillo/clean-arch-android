@@ -4,7 +4,7 @@ package com.javirock.cleanarchevents.presentationlayer.presenters.impl;
 import com.javirock.cleanarchevents.businesslayer.interactors.UserInteractor;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
-import com.javirock.cleanarchevents.data.UserRepositoryInteractor;
+import com.javirock.cleanarchevents.storage.UserRepositoryInteractor;
 import com.javirock.cleanarchevents.presentationlayer.presenters.UserPresenter;
 
 public class UserPresenterImpl implements UserPresenter, UserInteractor.CallBack{

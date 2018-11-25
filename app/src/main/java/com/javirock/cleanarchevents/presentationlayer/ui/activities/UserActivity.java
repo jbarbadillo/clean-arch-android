@@ -2,24 +2,23 @@ package com.javirock.cleanarchevents.presentationlayer.ui.activities;
 
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.javirock.cleanarchevents.R;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
-import com.javirock.cleanarchevents.data.UserRepositoryDatabase;
+import com.javirock.cleanarchevents.storage.UserRepositoryDatabase;
 import com.javirock.cleanarchevents.di.component.DaggerListComponent;
 import com.javirock.cleanarchevents.di.module.UserModule;
 import com.javirock.cleanarchevents.presentationlayer.base.BaseActivity;
 import com.javirock.cleanarchevents.presentationlayer.presenters.UserPresenter;
 import com.javirock.cleanarchevents.presentationlayer.presenters.impl.UserPresenterImpl;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class UserActivity extends BaseActivity implements UserPresenter.View {
-    private UserPresenter userPresenter;
+    @Inject
     UserRepositoryDatabase userRepositoryDatabase;
 
     @BindView(R.id.usernameTextView)
@@ -28,10 +27,19 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
     @BindView(R.id.emailTextView)
     TextView email;
 
+    //@BindView(R.id.user_list)
+    //ListView userListView;
+
+
+    private UserPresenter userPresenter;
+    //UserAdapter userAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // userAdapter = new UserAdapter(this);7
+        // userListView.setAdapter(userAdapter);
 
         userPresenter = new UserPresenterImpl(
                 this,

@@ -1,13 +1,10 @@
-package com.javirock.cleanarchevents.data;
+package com.javirock.cleanarchevents.storage;
 
 
-import android.content.Context;
-
-import com.javirock.cleanarchevents.businesslayer.interactors.UserInteractor;
 import com.javirock.cleanarchevents.businesslayer.models.RegistrationModel;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
-import com.javirock.cleanarchevents.data.api.UserApiService;
+import com.javirock.cleanarchevents.storage.api.UserApiService;
 
 import javax.inject.Inject;
 

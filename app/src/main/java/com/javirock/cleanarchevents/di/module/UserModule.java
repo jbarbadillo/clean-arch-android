@@ -1,7 +1,7 @@
 package com.javirock.cleanarchevents.di.module;
 
 
-import com.javirock.cleanarchevents.data.api.UserApiService;
+import com.javirock.cleanarchevents.storage.api.UserApiService;
 import com.javirock.cleanarchevents.di.scope.PerActivity;
 
 import dagger.Module;

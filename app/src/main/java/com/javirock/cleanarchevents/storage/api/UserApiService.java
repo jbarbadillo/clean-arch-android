@@ -1,8 +1,7 @@
-package com.javirock.cleanarchevents.data.api;
+package com.javirock.cleanarchevents.storage.api;
 
 
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
-import com.javirock.cleanarchevents.di.module.UserModule;
 
 import java.util.List;
 

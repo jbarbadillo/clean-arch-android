@@ -1,4 +1,4 @@
-package com.javirock.cleanarchevents.data;
+package com.javirock.cleanarchevents.storage;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
