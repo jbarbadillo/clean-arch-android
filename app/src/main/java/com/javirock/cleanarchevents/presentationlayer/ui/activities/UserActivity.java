@@ -2,6 +2,7 @@ package com.javirock.cleanarchevents.presentationlayer.ui.activities;
 
 
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.javirock.cleanarchevents.R;
@@ -23,14 +24,9 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
     @Inject
     UserListingRepository userListingRepository; // we dont know which implementation has
 
-    @BindView(R.id.usernameTextView)
-    TextView userName;
 
-    @BindView(R.id.emailTextView)
-    TextView email;
-
-    //@BindView(R.id.user_list)
-    //ListView userListView;
+    @BindView(R.id.user_list)
+    ListView userListView;
 
 
     private UserPresenter userPresenter;

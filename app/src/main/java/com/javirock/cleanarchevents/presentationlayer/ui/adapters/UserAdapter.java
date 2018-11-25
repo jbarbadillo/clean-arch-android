@@ -46,7 +46,7 @@ public class UserAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
-        View view = LayoutInflater.from(context).inflate(R.layout.user_list, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.user_view, null);
         ButterKnife.bind(this, view);
         titleView.setText(userModelList.get(i).getLogin());
         return view;
