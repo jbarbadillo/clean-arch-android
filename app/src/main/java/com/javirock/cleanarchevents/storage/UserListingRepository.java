@@ -34,6 +34,7 @@ public class UserListingRepository implements UserRepository, Observer<UserModel
     public void getUserListing(UserRepositoryInteractor userRepositoryInteractor) {
         this.userRepositoryInteractor = userRepositoryInteractor;
         Log.i("clean", "getting users");
+        userModelList.clear();
         Observable<List<UserModel>> userModelObservable = userApiService.getUsers();
         subscribe(userModelObservable, this);
     }
