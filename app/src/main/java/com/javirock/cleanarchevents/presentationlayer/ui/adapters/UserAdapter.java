@@ -1,6 +1,7 @@
 package com.javirock.cleanarchevents.presentationlayer.ui.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,13 +23,21 @@ public class UserAdapter extends BaseAdapter {
     Context context;
     private List<UserModel> userModelList = new ArrayList<>();
 
+    @BindView(R.id.title)
+    TextView titleView;
+    @BindView(R.id.id)
+    TextView idView;
+
     public UserAdapter(Context context){
         this.layoutInflater = LayoutInflater.from(context);
         this.context = context;
     }
-    public void addItems(List<UserModel> userModelList){
-        userModelList.addAll(userModelList);
+    public void addItems(List<UserModel> list){
+        Log.i("clean", "list size " +userModelList.size());
+        userModelList.clear();
+        userModelList.addAll(list);
         notifyDataSetChanged();
+
     }
     @Override
     public int getCount() {
@@ -46,12 +55,17 @@ public class UserAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
-        View view = LayoutInflater.from(context).inflate(R.layout.user_view, null);
-        ButterKnife.bind(this, view);
+        // inflate the layout for each list row
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).
+                    inflate(R.layout.user_view, viewGroup, false);
+        }
+        ButterKnife.bind(this, convertView);
         titleView.setText(userModelList.get(i).getLogin());
-        return view;
+        idView.setText(String.valueOf(userModelList.get(i).getId()));
+        Log.i("clean", "user " +userModelList.get(i).getLogin());
+        return convertView;
     }
 
-    @BindView(R.id.title)
-    TextView titleView;
+
 }

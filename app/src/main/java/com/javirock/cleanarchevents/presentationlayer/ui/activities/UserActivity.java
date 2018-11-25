@@ -30,6 +30,7 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
 
     @BindView(R.id.user_list)
     ListView userListView;
+
     UserAdapter userAdapter;
 
     private UserPresenter userPresenter;
@@ -92,7 +93,9 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
 
     @Override
     public void renderUsers(List<UserModel> userList) {
-        Log.i("clean", "render users");
+        Log.i("clean" , "userList "+userList.size());
         userAdapter.addItems(userList);
+        int count = userAdapter.getCount();
+        Log.i("clean" , "count "+count);
     }
 }

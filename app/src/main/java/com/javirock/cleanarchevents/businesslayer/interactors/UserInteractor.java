@@ -1,6 +1,8 @@
 package com.javirock.cleanarchevents.businesslayer.interactors;
 
 
+import android.util.Log;
+
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
 import com.javirock.cleanarchevents.storage.UserRepositoryInteractor;
@@ -33,6 +35,7 @@ public class UserInteractor implements UserInterface, UserRepositoryInteractor {
             callBack.onUsersRetrievedFailed("Registration failed");
             return;
         }
+        Log.i("clean", "on users retrieved " + userList.size());
         callBack.onUsersRetrieved(userList);
     }
 }
