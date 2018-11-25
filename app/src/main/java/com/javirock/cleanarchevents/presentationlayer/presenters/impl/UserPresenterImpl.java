@@ -7,15 +7,17 @@ import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
 import com.javirock.cleanarchevents.storage.UserRepositoryInteractor;
 import com.javirock.cleanarchevents.presentationlayer.presenters.UserPresenter;
 
+import java.util.List;
+
 public class UserPresenterImpl implements UserPresenter, UserInteractor.CallBack{
     UserPresenter.View view;
     UserRepository userRepository;
     UserInteractor userInteractor;
 
-    public UserPresenterImpl(View view, UserRepository userRepository, UserRepositoryInteractor userRepositoryInteractor){
+    public UserPresenterImpl(View view, UserRepository userRepository){
         this.view = view;
         this.userRepository = userRepository;
-        this.userInteractor = new UserInteractor(this, userRepository, userRepositoryInteractor);
+        this.userInteractor = new UserInteractor(this, userRepository);
     }
     @Override
     public void onCancelClicked() {
@@ -24,16 +26,16 @@ public class UserPresenterImpl implements UserPresenter, UserInteractor.CallBack
 
     @Override
     public void onResume() {
-        userInteractor.getUser("1");
+        userInteractor.getUsers();
     }
 
     @Override
-    public void onUserRetrieved(UserModel user) {
-        view.renderUser(user);
+    public void onUsersRetrieved(List<UserModel> userList) {
+        view.renderUsers(userList);
     }
 
     @Override
-    public void onUserRetrievedFailed(String error) {
+    public void onUsersRetrievedFailed(String error) {
         view.showError(error);
     }
 

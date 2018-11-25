@@ -6,6 +6,9 @@ import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
 import com.javirock.cleanarchevents.storage.api.UserApiService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
@@ -14,25 +17,24 @@ import io.reactivex.disposables.Disposable;
 
 import static io.reactivex.internal.operators.observable.ObservableBlockingSubscribe.subscribe;
 
-public class UserRepositoryDatabase implements UserRepository, Observer<UserModel> {
+public class UserListingRepository implements UserRepository, Observer<UserModel> {
     UserRepositoryInteractor userRepositoryInteractor;
-    UserModel user;
+    List<UserModel> userModelList = new ArrayList<>();
 
     @Inject
     protected UserApiService userApiService;
 
     @Inject
-    public UserRepositoryDatabase(){
+    public UserListingRepository(){
 
     }
     @Override
-    public void getUser(UserRepositoryInteractor userRepositoryInteractor, String user_id) {
+    public void getUserListing(UserRepositoryInteractor userRepositoryInteractor) {
         this.userRepositoryInteractor = userRepositoryInteractor;
 
-        Observable<UserModel> userModelObservable = userApiService.getUser(user_id);
+        Observable<UserModel> userModelObservable = userApiService.getUsers(1, 1);
         subscribe(userModelObservable, this);
-        //UserDatabase database = UserDatabase.getUserDatabaseInstance(context);
-        //UserModel user = database.userDAO().getUser(1);
+
     }
 
 
@@ -54,7 +56,7 @@ public class UserRepositoryDatabase implements UserRepository, Observer<UserMode
 
     @Override
     public void onNext(UserModel userModel) {
-        user = userModel;
+        userModelList.add(userModel);
     }
 
     @Override
@@ -64,6 +66,6 @@ public class UserRepositoryDatabase implements UserRepository, Observer<UserMode
 
     @Override
     public void onComplete() {
-        userRepositoryInteractor.onUserRetrieved(user);
+        userRepositoryInteractor.onUsersRetrieved(userModelList);
     }
 }

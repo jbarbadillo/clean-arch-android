@@ -6,12 +6,14 @@ import android.widget.TextView;
 
 import com.javirock.cleanarchevents.R;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
-import com.javirock.cleanarchevents.storage.UserRepositoryDatabase;
+import com.javirock.cleanarchevents.storage.UserListingRepository;
 import com.javirock.cleanarchevents.di.component.DaggerListComponent;
 import com.javirock.cleanarchevents.di.module.UserModule;
 import com.javirock.cleanarchevents.presentationlayer.base.BaseActivity;
 import com.javirock.cleanarchevents.presentationlayer.presenters.UserPresenter;
 import com.javirock.cleanarchevents.presentationlayer.presenters.impl.UserPresenterImpl;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -19,7 +21,7 @@ import butterknife.BindView;
 
 public class UserActivity extends BaseActivity implements UserPresenter.View {
     @Inject
-    UserRepositoryDatabase userRepositoryDatabase;
+    UserListingRepository userListingRepository;
 
     @BindView(R.id.usernameTextView)
     TextView userName;
@@ -43,7 +45,7 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
 
         userPresenter = new UserPresenterImpl(
                 this,
-                userRepositoryDatabase);
+                userListingRepository);
 
     }
 
@@ -88,8 +90,7 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
     }
 
     @Override
-    public void renderUser(UserModel user) {
-        userName.setText(user.getUserName());
-        email.setText(user.getEmail());
+    public void renderUsers(List<UserModel> userList) {
+
     }
 }

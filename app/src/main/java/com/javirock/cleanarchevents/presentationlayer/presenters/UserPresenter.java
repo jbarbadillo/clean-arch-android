@@ -3,6 +3,8 @@ package com.javirock.cleanarchevents.presentationlayer.presenters;
 
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 
+import java.util.List;
+
 public interface UserPresenter {
     void onCancelClicked();
     void onResume();
@@ -11,7 +13,7 @@ public interface UserPresenter {
         void hideProgress();
         void showError(String error);
         void nextScreen();
-        void renderUser(UserModel user);
+        void renderUsers(List<UserModel> userList);
     }
 
 }

@@ -14,7 +14,7 @@ import retrofit2.http.Query;
 
 public interface UserApiService {
     @GET("/users")
-    public Call<List<UserModel>> getUsers(
+    Observable<UserModel> getUsers(
             @Query("per_page") int per_page,
             @Query("page") int page
     );
