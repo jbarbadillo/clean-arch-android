@@ -25,3 +25,4 @@ In this sample a typicall set of androdi librerias is used for saving boilerplat
 
 + Dagger: dependency injection
 + Retrofit: HTPP client and data mapping
++ Butterknife: layout binding
