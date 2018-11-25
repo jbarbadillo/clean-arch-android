@@ -34,6 +34,7 @@ public class UserAdapter extends BaseAdapter {
     }
     public void addItems(List<UserModel> list){
         userModelList.clear();
+        notifyDataSetChanged();
         userModelList.addAll(list);
         notifyDataSetChanged();
 
