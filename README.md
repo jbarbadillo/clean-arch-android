@@ -21,7 +21,7 @@ The project proposes a clean architecture based on Presentation Layer, Bussiness
   
 ## Android Libraries
 
-In this sample a typicall set of androdi librerias is used for saving boilerplate and extra work.
+In this project a typicall set of Android libreries is used for saving boilerplate and extra work.
 
 + **Dagger**: dependency injection
 + **Retrofit**: HTPP client and data mapping
