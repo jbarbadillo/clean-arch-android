@@ -18,3 +18,10 @@ The project proposes a clean architecture based on Presentation Layer, Bussiness
 + **Data Layer**
   - api
   - repositories implementation
+  
+## Android Libraries
+
+In this sample a typicall set of androdi librerias is used for saving boilerplate and extra work.
+
++ Dagger: dependency injection
++ Retrofit: HTPP client and data mapping
