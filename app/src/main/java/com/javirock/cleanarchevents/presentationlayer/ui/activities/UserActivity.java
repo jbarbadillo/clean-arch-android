@@ -21,7 +21,7 @@ import butterknife.BindView;
 
 public class UserActivity extends BaseActivity implements UserPresenter.View {
     @Inject
-    UserListingRepository userListingRepository;
+    UserListingRepository userListingRepository; // we dont know which implementation has
 
     @BindView(R.id.usernameTextView)
     TextView userName;
