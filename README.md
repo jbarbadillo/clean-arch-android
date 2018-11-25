@@ -15,6 +15,6 @@ The project proposes a clean architecture based on Presentation Layer, Bussiness
   - models: data models for holding bussiness information
   - interactors: get calls from presenters, and call data layer
   - repositories: interfaces for stablishing a contrat to follow by data implementations
-+ Data Layer
++ **Data Layer**
   - api
   - repositories implementation
