@@ -47,15 +47,7 @@ public class NetworkModule {
                 .build();
     }
 
-    @Singleton
-    @Provides
-    @Named("ok-2")
-    OkHttpClient provideOkkHttpClient2(){
-        return new OkHttpClient.Builder()
-                .connectTimeout(20, TimeUnit.SECONDS)
-                .readTimeout(20, TimeUnit.SECONDS)
-                .build();
-    }
+    
     @Singleton
     @Provides
     Retrofit providesRetrofit(@Named("ok-1") OkHttpClient client,
