@@ -33,7 +33,6 @@ public class UserAdapter extends BaseAdapter {
         this.context = context;
     }
     public void addItems(List<UserModel> list){
-        Log.i("clean", "list size " +userModelList.size());
         userModelList.clear();
         userModelList.addAll(list);
         notifyDataSetChanged();
