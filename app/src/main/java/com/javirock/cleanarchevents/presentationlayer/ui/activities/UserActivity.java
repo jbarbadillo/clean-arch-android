@@ -93,8 +93,6 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
 
     @Override
     public void renderUsers(List<UserModel> userList) {
-        userListView.setAdapter(null);
-        userListView.setAdapter(userAdapter);
         userAdapter.addItems(userList);
     }
 }
