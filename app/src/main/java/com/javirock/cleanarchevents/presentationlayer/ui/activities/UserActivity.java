@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.javirock.cleanarchevents.R;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
+import com.javirock.cleanarchevents.presentationlayer.ui.adapters.UserAdapter;
 import com.javirock.cleanarchevents.storage.UserListingRepository;
 import com.javirock.cleanarchevents.di.component.DaggerListComponent;
 import com.javirock.cleanarchevents.di.module.UserModule;
@@ -27,17 +28,17 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
 
     @BindView(R.id.user_list)
     ListView userListView;
-
+    UserAdapter userAdapter;
 
     private UserPresenter userPresenter;
-    //UserAdapter userAdapter;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // userAdapter = new UserAdapter(this);7
-        // userListView.setAdapter(userAdapter);
+        userAdapter = new UserAdapter(this);
+        userListView.setAdapter(userAdapter);
 
         userPresenter = new UserPresenterImpl(
                 this,
@@ -87,6 +88,6 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
 
     @Override
     public void renderUsers(List<UserModel> userList) {
-
+        userAdapter.addItems(userList);
     }
 }
