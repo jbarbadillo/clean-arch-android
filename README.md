@@ -23,6 +23,6 @@ The project proposes a clean architecture based on Presentation Layer, Bussiness
 
 In this sample a typicall set of androdi librerias is used for saving boilerplate and extra work.
 
-+ Dagger: dependency injection
-+ Retrofit: HTPP client and data mapping
-+ Butterknife: layout binding
++ **Dagger**: dependency injection
++ **Retrofit**: HTPP client and data mapping
++ **Butterknife**: layout binding
