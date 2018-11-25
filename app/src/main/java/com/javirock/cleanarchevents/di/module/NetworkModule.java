@@ -14,7 +14,8 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 /*
-This module is for Application component
+This module is for providing dependencies of network.
+All @Provides must belong to a @Module
  */
 @Module
 public class NetworkModule {
@@ -33,7 +34,7 @@ public class NetworkModule {
     }
     @Singleton
     @Provides
-    GsonConverterFactory providesGsonConverterFactory(){
+    GsonConverterFactory provideGsonConverterFactory(){
         return GsonConverterFactory.create();
     }
 
@@ -47,10 +48,10 @@ public class NetworkModule {
                 .build();
     }
 
-    
+
     @Singleton
     @Provides
-    Retrofit providesRetrofit(@Named("ok-1") OkHttpClient client,
+    Retrofit provideRetrofit(@Named("ok-1") OkHttpClient client,
                               GsonConverterFactory gsonConverterFactory,
                               RxJavaCallAdapterFactory rxJavaCallAdapterFactory){
         return new Retrofit.Builder()
@@ -64,6 +65,6 @@ public class NetworkModule {
     }
     @Singleton
     @Provides
-    Context providesContext(){return context;}
+    Context provideContext(){return context;}
 }
 

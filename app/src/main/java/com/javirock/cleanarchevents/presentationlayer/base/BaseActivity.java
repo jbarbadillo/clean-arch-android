@@ -7,7 +7,7 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.javirock.cleanarchevents.application.UserApplication;
+import com.javirock.cleanarchevents.application.MainApplication;
 import com.javirock.cleanarchevents.di.component.ApplicationComponent;
 
 import butterknife.ButterKnife;
@@ -15,8 +15,6 @@ import butterknife.Unbinder;
 
 public abstract class BaseActivity extends AppCompatActivity{
     Unbinder unbinder;
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,8 +30,8 @@ public abstract class BaseActivity extends AppCompatActivity{
     }
 
     protected ApplicationComponent getApplicationComponent(){
-        // The main aplication is UserApplication in this project
-        return ((UserApplication) getApplication()).getApplicationComponent();
+        // The main aplication is MainApplication in this project
+        return ((MainApplication) getApplication()).getApplicationComponent();
     }
     protected void resolveDaggerDependency(){
 

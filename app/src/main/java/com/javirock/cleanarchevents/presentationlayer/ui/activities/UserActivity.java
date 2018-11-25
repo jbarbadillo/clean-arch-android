@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.javirock.cleanarchevents.R;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.data.UserRepositoryDatabase;
+import com.javirock.cleanarchevents.di.component.DaggerListComponent;
 import com.javirock.cleanarchevents.di.module.UserModule;
 import com.javirock.cleanarchevents.presentationlayer.base.BaseActivity;
 import com.javirock.cleanarchevents.presentationlayer.presenters.UserPresenter;

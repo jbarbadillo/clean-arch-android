@@ -4,6 +4,7 @@ package com.javirock.cleanarchevents.presentationlayer.presenters.impl;
 import com.javirock.cleanarchevents.businesslayer.interactors.UserInteractor;
 import com.javirock.cleanarchevents.businesslayer.models.UserModel;
 import com.javirock.cleanarchevents.businesslayer.repositories.UserRepository;
+import com.javirock.cleanarchevents.data.UserRepositoryInteractor;
 import com.javirock.cleanarchevents.presentationlayer.presenters.UserPresenter;
 
 public class UserPresenterImpl implements UserPresenter, UserInteractor.CallBack{
@@ -11,10 +12,10 @@ public class UserPresenterImpl implements UserPresenter, UserInteractor.CallBack
     UserRepository userRepository;
     UserInteractor userInteractor;
 
-    public UserPresenterImpl(View view, UserRepository userRepository){
+    public UserPresenterImpl(View view, UserRepository userRepository, UserRepositoryInteractor userRepositoryInteractor){
         this.view = view;
         this.userRepository = userRepository;
-        this.userInteractor = new UserInteractor(this, userRepository);
+        this.userInteractor = new UserInteractor(this, userRepository, userRepositoryInteractor);
     }
     @Override
     public void onCancelClicked() {

@@ -4,10 +4,12 @@ package com.javirock.cleanarchevents.application;
 import android.app.Application;
 
 import com.javirock.cleanarchevents.di.component.ApplicationComponent;
+import com.javirock.cleanarchevents.di.component.DaggerApplicationComponent;
 import com.javirock.cleanarchevents.di.module.NetworkModule;
 
-public class UserApplication extends Application {
+public class MainApplication extends Application {
     private ApplicationComponent applicationComponent;
+    private static String BASE_URL = "https://api.github.com";
 
     @Override
     public void onCreate() {
@@ -18,7 +20,7 @@ public class UserApplication extends Application {
 
     private void initializeApplicationComponent() {
         applicationComponent = DaggerApplicationComponent.builder()
-                .networkModule(new NetworkModule(this, "https://api.github.com"))
+                .networkModule(new NetworkModule(this, BASE_URL))
                 .build();
     }
 
