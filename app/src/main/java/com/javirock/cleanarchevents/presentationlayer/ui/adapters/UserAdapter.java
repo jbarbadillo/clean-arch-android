@@ -63,7 +63,7 @@ public class UserAdapter extends BaseAdapter {
         ButterKnife.bind(this, convertView);
         titleView.setText(userModelList.get(i).getLogin());
         idView.setText(String.valueOf(userModelList.get(i).getId()));
-        Log.i("clean", "user " +userModelList.get(i).getLogin());
+
         return convertView;
     }
 
