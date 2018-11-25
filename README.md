@@ -1,5 +1,8 @@
 # clean-arch-android
+
 Sample for simple clean architecture in Android using Presenter, Bussiness and Data layers.
+
+:+1:
 
 ## Project Structuture
 
