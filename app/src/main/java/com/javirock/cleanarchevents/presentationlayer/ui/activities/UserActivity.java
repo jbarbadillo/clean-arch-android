@@ -93,9 +93,8 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
 
     @Override
     public void renderUsers(List<UserModel> userList) {
-        Log.i("clean" , "userList "+userList.size());
+        userListView.setAdapter(null);
+        userListView.setAdapter(userAdapter);
         userAdapter.addItems(userList);
-        int count = userAdapter.getCount();
-        Log.i("clean" , "count "+count);
     }
 }
