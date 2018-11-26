@@ -28,6 +28,6 @@ In this project a typicall set of Android libreries is used for saving boilerpla
 
 + **Dagger**: dependency injection
 + [**Retrofit**](https://github.com/square/retrofit): Type-safe HTTP client for Android and Java
-+ **GSON**
++ [**GSON**](https://github.com/google/gson): Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object.
 + **Butterknife**: layout binding
 + **RxJava**
