@@ -28,4 +28,6 @@ In this project a typicall set of Android libreries is used for saving boilerpla
 
 + **Dagger**: dependency injection
 + **Retrofit**: HTPP client and data mapping
++ **GSON**
 + **Butterknife**: layout binding
++ **RxJava**
