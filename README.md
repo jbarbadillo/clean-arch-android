@@ -27,7 +27,7 @@ The project proposes a clean architecture based on Presentation Layer, Bussiness
 In this project a typicall set of Android libreries is used for saving boilerplate and extra work.
 
 + **Dagger**: dependency injection
-+ **Retrofit**: HTPP client and data mapping
++ [**Retrofit**](https://github.com/square/retrofit): Type-safe HTTP client for Android and Java
 + **GSON**
 + **Butterknife**: layout binding
 + **RxJava**
