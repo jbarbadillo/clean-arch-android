@@ -30,4 +30,4 @@ In this project a typicall set of Android libreries is used for saving boilerpla
 + [**Retrofit**](https://github.com/square/retrofit): Type-safe HTTP client for Android and Java
 + [**GSON**](https://github.com/google/gson): Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object.
 + [**Butterknife**](https://github.com/JakeWharton/butterknife): Field and method binding for Android views which uses annotation processing to generate boilerplate code for you.
-+ **RxJava**
++ [**RxJava**](https://github.com/ReactiveX/RxJava): RxJava is a Java VM implementation of Reactive Extensions: a library for composing asynchronous and event-based programs by using observable sequences.
