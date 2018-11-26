@@ -26,7 +26,7 @@ The project proposes a clean architecture based on Presentation Layer, Bussiness
 
 In this project a typicall set of Android libreries is used for saving boilerplate and extra work.
 
-+ **Dagger**: dependency injection
++ [**Dagger**](https://github.com/google/dagger): A fast dependency injector for Android and Java.
 + [**Retrofit**](https://github.com/square/retrofit): Type-safe HTTP client for Android and Java
 + [**GSON**](https://github.com/google/gson): Gson is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object.
 + [**Butterknife**](https://github.com/JakeWharton/butterknife): Field and method binding for Android views which uses annotation processing to generate boilerplate code for you.
