@@ -27,14 +27,12 @@ public class UserActivity extends BaseActivity implements UserPresenter.View {
     @Inject
     UserListingRepository userListingRepository;
 
-
     @BindView(R.id.user_list)
     ListView userListView;
 
     UserAdapter userAdapter;
 
     private UserPresenter userPresenter;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
