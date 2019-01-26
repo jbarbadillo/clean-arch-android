@@ -25,6 +25,7 @@ public class UserAdapter extends BaseAdapter {
 
     @BindView(R.id.title) TextView titleView;
     @BindView(R.id.id) TextView idView;
+    @BindView(R.id.htmlurl) TextView htmlView;
 
     public UserAdapter(Context context){
         this.layoutInflater = LayoutInflater.from(context);
@@ -60,6 +61,7 @@ public class UserAdapter extends BaseAdapter {
         ButterKnife.bind(this, convertView);
         titleView.setText(userModelList.get(i).getLogin());
         idView.setText(String.valueOf(userModelList.get(i).getId()));
+        htmlView.setText(userModelList.get(i).getHtmlurl());
 
         return convertView;
     }
