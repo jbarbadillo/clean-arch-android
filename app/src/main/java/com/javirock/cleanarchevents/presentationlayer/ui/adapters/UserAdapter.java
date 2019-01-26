@@ -23,10 +23,8 @@ public class UserAdapter extends BaseAdapter {
     Context context;
     private List<UserModel> userModelList = new ArrayList<>();
 
-    @BindView(R.id.title)
-    TextView titleView;
-    @BindView(R.id.id)
-    TextView idView;
+    @BindView(R.id.title) TextView titleView;
+    @BindView(R.id.id) TextView idView;
 
     public UserAdapter(Context context){
         this.layoutInflater = LayoutInflater.from(context);
