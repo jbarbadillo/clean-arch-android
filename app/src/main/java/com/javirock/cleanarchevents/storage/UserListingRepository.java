@@ -49,7 +49,6 @@ public class UserListingRepository implements UserRepository, Observer<UserModel
     public void cancelUser(String user_id) {
 
     }
-    //reactivex methods
     @Override
     public void onSubscribe(Disposable d) {
     }
@@ -64,7 +63,6 @@ public class UserListingRepository implements UserRepository, Observer<UserModel
         Log.i("clean", "error observable " + e.getMessage().toString());
         userRepositoryInteractor.onError(e.getMessage());
     }
-
     @Override
     public void onComplete() {
         Log.i("clean", "completed "+userModelList.size());

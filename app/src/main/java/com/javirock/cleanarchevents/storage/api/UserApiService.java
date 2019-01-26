@@ -16,7 +16,6 @@ public interface UserApiService {
     @GET("/users")
     Observable<List<UserModel>> getUsers();
 
-    //With Rx Java
     @GET("/user/{id}")
     Observable<UserModel> getUser(@Path("id") String user_id);
 
