@@ -9,6 +9,7 @@ public class UserModel {
     private String login;
     private long id;
     private String url;
+    private String htmlurl;
 
     public String getLogin() {
         return login;
@@ -32,5 +33,13 @@ public class UserModel {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getHtmlurl() {
+        return htmlurl;
+    }
+
+    public void setHtmlurl(String htmlurl) {
+        this.htmlurl = htmlurl;
     }
 }
