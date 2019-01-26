@@ -24,7 +24,6 @@ public class UserInteractor implements UserInterface, UserRepositoryInteractor {
     public void onError(String error) {
 
     }
-
     @Override
     public void onUserCreated(String user_id) {
 

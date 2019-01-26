@@ -23,7 +23,6 @@ public class UserPresenterImpl implements UserPresenter, UserInteractor.CallBack
     public void onCancelClicked() {
 
     }
-
     @Override
     public void onResume() {
         userInteractor.getUsers();
@@ -33,7 +32,6 @@ public class UserPresenterImpl implements UserPresenter, UserInteractor.CallBack
     public void onUsersRetrieved(List<UserModel> userList) {
         view.renderUsers(userList);
     }
-
     @Override
     public void onUsersRetrievedFailed(String error) {
         view.showError(error);
@@ -43,7 +41,6 @@ public class UserPresenterImpl implements UserPresenter, UserInteractor.CallBack
     public void onUserCancelled() {
 
     }
-
     @Override
     public void onUserCancelledFailed(String error) {
 
